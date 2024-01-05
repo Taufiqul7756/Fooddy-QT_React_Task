@@ -1,16 +1,32 @@
+"use client";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import UserMenu from "./UserMenu";
 import SearchBar from "./Search";
 
+import Select from "react-dropdown-select";
+
+const options = [
+  { value: "/", label: "Home" },
+  { value: "/details", label: "Details" },
+  { value: "/category", label: "Category" },
+  { value: "/myfavorite", label: "My Favorites" },
+  { value: "/profile", label: "Profile" },
+  { value: "/login", label: "Login/Sign Up" },
+];
+
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setIsOpen(!isOpen);
+  };
   return (
     <div
       className="
     sticky
     top-0
     w-full
-    bg-slate-200
     z-30
     shadow-sm
     "
@@ -44,19 +60,37 @@ const Navbar = () => {
         </ul>
       </nav> */}
       <div className="py-4 border-b-[1px]">
+        {/* Logo */}
         <div
           className="
           flex
           items-center
           justify-between
-          gap-3
-          md:gap-0
           "
         >
           <Link href="/">TG</Link>
-          <div className="">
-            <SearchBar />
+          <div className="flex gap-2">
+            <div className="">
+              <SearchBar />
+            </div>
+
+            {/* Dropdown MENU */}
+            <nav>
+              <Select
+                className="bg-white"
+                options={options}
+                labelField="label"
+                valueField="value"
+                onChange={(selected) => {
+                  if (selected.length > 0) {
+                    // Use the Link component for client-side navigation
+                    window.location.href = selected[0].value;
+                  }
+                }}
+              />
+            </nav>
           </div>
+          {/* User icon */}
           <div className="flex items-center gap-8 md:gap-12">
             <UserMenu />
           </div>
