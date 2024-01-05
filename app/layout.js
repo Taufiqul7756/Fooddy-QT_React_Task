@@ -13,11 +13,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${poppins.className} bg-slate-100`}>
-        <div className="px-10">
+        <div className="px-20">
           <Navbar />
         </div>
 
-        <div className="px-10">{children}</div>
+        <div className="px-20">{children}</div>
 
         {/* <footer>This is footer</footer> */}
       </body>
