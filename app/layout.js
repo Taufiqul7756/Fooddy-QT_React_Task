@@ -2,7 +2,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "./navbar/page";
 
-const inter = Inter({ subsets: ["latin"] });
+const poppins = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Create Next App",
@@ -12,9 +12,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <Navbar />
-        {children}
+      <body className={`${poppins.className} bg-slate-100`}>
+        <div className="px-10">
+          <Navbar />
+        </div>
+
+        <div className="px-10">{children}</div>
+
         {/* <footer>This is footer</footer> */}
       </body>
     </html>
