@@ -2,6 +2,7 @@
 
 // import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import { useForm } from "react-hook-form";
+import { FaMagnifyingGlass } from "react-icons/fa6";
 
 const SearchBar = () => {
   const {
@@ -12,17 +13,15 @@ const SearchBar = () => {
   } = useForm();
 
   return (
-    <div className="flex items-center">
+    <div className="flex items-center relative">
+      <FaMagnifyingGlass className="absolute top-1/2 transform -translate-y-1/2 left-3 text-gray-500" />
       <input
         {...register("searchTerm")}
         autoComplete="off"
         type="text"
         placeholder="Search"
-        className="p-2 border border-gray-300 rounded-l-md focus:outline-none focus:border-[0.5px] focus:border-slate-500 w-80"
+        className="pl-8 pr-2 py-2 border rounded focus:outline-none focus:border-[0.5px] focus:border-slate-500 w-80"
       />
-      <button className="bg-slate-700 hover:opacity-80 text-white p-2 rounded-r-md">
-        Search
-      </button>
     </div>
   );
 };
