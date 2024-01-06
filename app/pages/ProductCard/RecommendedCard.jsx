@@ -10,13 +10,39 @@ const RecommendedCard = ({ recommendedItems }) => {
     speed: 400,
     slidesToShow: 5,
     slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 1024, // Large screens
+        settings: {
+          slidesToShow: 5,
+        },
+      },
+      {
+        breakpoint: 900, // Large screens
+        settings: {
+          slidesToShow: 4,
+        },
+      },
+      {
+        breakpoint: 700, // Large screens
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 500, // Small screens
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+    ],
   };
 
   return (
     <div className="">
       <div className="flex justify-between items-center mb-2">
         <h3 className="font-bold">Recommended</h3>
-        <h3 className="text-[#ff9c1c] font-bold">AddMore</h3>
+        <h3 className="text-[#ff9c1c] font-bold cursor-pointer ">AddMore</h3>
       </div>
 
       <Slider {...settings}>
