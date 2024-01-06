@@ -3,7 +3,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import UserMenu from "../../components/UserMenu";
 import SearchBar from "../../components/Search";
-
+import { FaMagnifyingGlass } from "react-icons/fa6";
 import Select from "react-dropdown-select";
 
 const options = [
@@ -68,10 +68,14 @@ const Navbar = () => {
           justify-between
           "
         >
-          <Link href="/">TG</Link>
-          <div className="flex gap-2">
-            <div className="">
-              <SearchBar />
+          <Link className="font-bold" href="/">
+            Pti.
+          </Link>
+          <div className="flex gap-2 sm:gap-1 md:gap-1 ">
+            <div className="flex relative">
+              <FaMagnifyingGlass className="absolute top-1/2 transform -translate-y-1/2 left-3 text-gray-500" />
+
+              <SearchBar placeholder="Search" />
             </div>
 
             {/* Dropdown MENU */}
