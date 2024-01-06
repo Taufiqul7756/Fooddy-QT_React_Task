@@ -1,19 +1,27 @@
 "use client";
 
-import Card from "@/app/components/Card";
+import React, { Component } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const PopularProduct = ({ popularItems }) => {
   console.log("Popular Product", popularItems);
+  const settings = {
+    infinite: true,
+    speed: 400,
+    slidesToShow: 5,
+    slidesToScroll: 1,
+  };
   return (
     <div>
       <div className="flex justify-between items-center mb-2">
         <h3>Popular</h3>
         <h3 className="text-[#ff9c1c]">AddMore</h3>
       </div>
-      <div className="flex flex-wrap  gap-4">
+      <Slider {...settings}>
         {popularItems.map((item) => (
           <div key={item.Id} className="justify-center items-center">
             <img
@@ -28,7 +36,7 @@ const PopularProduct = ({ popularItems }) => {
             </h5>
           </div>
         ))}
-      </div>
+      </Slider>
     </div>
   );
 };
