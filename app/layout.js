@@ -1,6 +1,6 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Navbar from "./navbar/page";
+import Navbar from "./pages/navbar/page";
 
 const poppins = Inter({ subsets: ["latin"] });
 
