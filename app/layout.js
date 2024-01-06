@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "./pages/navbar/page";
+import FooterSection from "./footer/page";
 
 const poppins = Inter({ subsets: ["latin"] });
 
@@ -13,13 +14,15 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${poppins.className} bg-slate-100`}>
-        <div className="px-20">
+        <div className="px-40">
           <Navbar />
         </div>
 
-        <div className="px-20">{children}</div>
+        <div className="px-40">{children}</div>
 
-        {/* <footer>This is footer</footer> */}
+        <div>
+          <FooterSection />
+        </div>
       </body>
     </html>
   );
