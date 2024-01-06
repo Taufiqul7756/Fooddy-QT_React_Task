@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -15,8 +15,8 @@ const RecommendedCard = ({ recommendedItems }) => {
   return (
     <div className="">
       <div className="flex justify-between items-center mb-2">
-        <h3>Recommended</h3>
-        <h3 className="text-[#ff9c1c]">AddMore</h3>
+        <h3 className="font-bold">Recommended</h3>
+        <h3 className="text-[#ff9c1c] font-bold">AddMore</h3>
       </div>
 
       <Slider {...settings}>

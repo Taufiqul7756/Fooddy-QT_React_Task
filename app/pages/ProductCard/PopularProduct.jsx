@@ -1,6 +1,6 @@
 "use client";
 
-import React, { Component } from "react";
+import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Slider from "react-slick";
@@ -18,8 +18,8 @@ const PopularProduct = ({ popularItems }) => {
   return (
     <div>
       <div className="flex justify-between items-center mb-2">
-        <h3>Popular</h3>
-        <h3 className="text-[#ff9c1c]">AddMore</h3>
+        <h3 className="font-bold">Popular</h3>
+        <h3 className="text-[#ff9c1c] font-bold">AddMore</h3>
       </div>
       <Slider {...settings}>
         {popularItems.map((item) => (
