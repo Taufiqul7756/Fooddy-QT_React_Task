@@ -9,7 +9,7 @@ const PopularProduct = ({ popularItems }) => {
   console.log("Popular Product", popularItems);
   return (
     <div>
-      <div className="flex justify-between items-center">
+      <div className="flex justify-between items-center mb-2">
         <h3>Popular</h3>
         <h3 className="text-[#ff9c1c]">AddMore</h3>
       </div>
