@@ -1,13 +1,16 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Form from "@/app/components/Form";
 
 const PopularProduct = ({ popularItems }) => {
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+
   console.log("Popular Product", popularItems);
 
   const settings = {
@@ -42,9 +45,19 @@ const PopularProduct = ({ popularItems }) => {
       },
     ],
   };
+
   const handleAddMoreClick = () => {
-    // Your logic for handling the "AddMore" click
-    console.log("AddMore Clicked");
+    setIsPopupOpen(true);
+  };
+
+  const handlePopupClose = () => {
+    setIsPopupOpen(false);
+  };
+
+  const handleFormSubmit = (data) => {
+    // Handle form submission logic here
+    console.log(data);
+    setIsPopupOpen(false); // Close the popup after submission
   };
   return (
     <div>
@@ -74,6 +87,19 @@ const PopularProduct = ({ popularItems }) => {
           </div>
         ))}
       </Slider>
+      {isPopupOpen && (
+        <div className="fixed top-0 left-0 right-0 bottom-0 bg-black bg-opacity-50 flex items-center justify-center">
+          <div className="bg-white p-4">
+            <button
+              onClick={handlePopupClose}
+              className="float-right text-red-500"
+            >
+              Close
+            </button>
+            <Form onSubmit={handleFormSubmit} />
+          </div>
+        </div>
+      )}
     </div>
   );
 };
