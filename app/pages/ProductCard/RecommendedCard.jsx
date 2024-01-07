@@ -88,16 +88,18 @@ const RecommendedCard = ({ recommendedItems }) => {
       <Slider {...settings} className="gap-4" ref={sliderRef}>
         {recommendedItems.map((item) => (
           <div key={item.Id} className="flex-shrink-0">
-            <img
-              alt={item.Name}
-              src={item.ImageUrl}
-              className="rounded-lg h-64 object-cover-fit sm:h-25 sm:w-25 "
-              width={400}
-              height={300}
-            />
-            <h5 className="mt-2 font-sm text-gray-950-900 sm:text-sm">
-              {item.Name}
-            </h5>
+            <div className="slick-slide" style={{ marginRight: "1rem" }}>
+              <img
+                alt={item.Name}
+                src={item.ImageUrl}
+                className="rounded-lg h-64 object-cover-fit sm:h-25 sm:w-25 "
+                width={400}
+                height={300}
+              />
+              <h5 className="mt-2 font-sm text-gray-950-900 sm:text-sm">
+                {item.Name}
+              </h5>
+            </div>
           </div>
         ))}
       </Slider>
