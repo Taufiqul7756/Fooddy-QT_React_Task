@@ -70,7 +70,7 @@ const Form = ({ onSubmit }) => {
                 className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
                 for="grid-first-name"
               >
-                Image URL
+                isPopular
               </label>
               <select {...register("isPopular", { required: true })}>
                 <option value="True">True</option>
@@ -84,7 +84,7 @@ const Form = ({ onSubmit }) => {
                 className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
                 for="grid-first-name"
               >
-                Image URL
+                isRecommended
               </label>
               <select {...register("isRecommended", { required: true })}>
                 <option value="True">True</option>
