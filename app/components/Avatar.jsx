@@ -13,7 +13,7 @@ const Avatar = ({ src }) => {
       />
     );
   }
-  return <FaUserCircle size={24} />;
+  return <FaUserCircle size={34} />;
 };
 
 export default Avatar;
