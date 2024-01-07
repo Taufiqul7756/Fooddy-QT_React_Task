@@ -16,11 +16,15 @@ const options = [
 ];
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const toggleDropdown = () => {
-    setIsOpen(!isOpen);
+    setIsDropdownOpen(!isDropdownOpen);
   };
+
+  // const toggleDropdown = () => {
+  //   setIsOpen(!isOpen);
+  // };
   return (
     <div
       className="
@@ -78,21 +82,76 @@ const Navbar = () => {
               <SearchBar placeholder="Search" />
             </div>
 
-            {/* Dropdown MENU */}
-            <nav>
-              <Select
-                className="bg-white"
-                options={options}
-                labelField="label"
-                valueField="value"
-                onChange={(selected) => {
-                  if (selected.length > 0) {
-                    // Use the Link component for client-side navigation
-                    window.location.href = selected[0].value;
-                  }
-                }}
-              />
-            </nav>
+            <div className="relative">
+              <button
+                className="text-black bg-white  focus:ring-4focus:outline-none focus:border-[0.5px] focus:border-slate-500 font-medium rounded-lg text-sm px-4 py-3.5 text-center inline-flex items-center"
+                type="button"
+                onClick={toggleDropdown}
+              >
+                MENU{" "}
+                <svg
+                  className="w-4 h-4 ml-2"
+                  fill="none"
+                  stroke="#ff9c1c"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </button>
+
+              {/* Dropdown menu */}
+              <div
+                className={`${
+                  isDropdownOpen ? "absolute" : "hidden"
+                } bg-white text-base z-50 list-none divide-y divide-gray-100 rounded shadow my-4 right-0 top-full`}
+                id="dropdown"
+              >
+                <ul className="py-1" aria-labelledby="dropdown">
+                  <Link
+                    href="/"
+                    className="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                  >
+                    Home
+                  </Link>
+                  <Link
+                    href="/details"
+                    className="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                  >
+                    Details
+                  </Link>
+                  <Link
+                    href="/category"
+                    className="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                  >
+                    Category
+                  </Link>
+                  <Link
+                    href="/myfav"
+                    className="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                  >
+                    My Favorites
+                  </Link>
+                  <Link
+                    href="/profile"
+                    className="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                  >
+                    Profile
+                  </Link>
+                  <Link
+                    href="/home"
+                    className="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                  >
+                    Login / Sign Up
+                  </Link>
+                </ul>
+              </div>
+            </div>
           </div>
           {/* User icon */}
           <div className="flex items-center gap-8 md:gap-12">
