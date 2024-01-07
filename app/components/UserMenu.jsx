@@ -16,26 +16,34 @@ const UserMenu = () => {
       <div className="relative z-30">
         <div
           onClick={toggleOpen}
-          className="
-        p-2
-        border-[1px]
-        border-slate-400
+          className="    
         flex
         flex-row
         items-center
-        gap-1
-        rounded-full
         cursor-pointer
-        hover:shadow-md
         transition
-        text-slate-700
+        text-[#ff9c1c]
         "
         >
           <Avatar onClick={toggleOpen} />
           {/* <AiFillCaretDown /> */}
         </div>
       </div>
-      {isOpen ? <BackDrop onClick={toggleOpen} /> : null}
+      {isOpen && (
+        <>
+          <div className="absolute top-full right-0 mt-2 w-48 bg-white text-gray-700 rounded shadow">
+            <ul>
+              <li className="py-2 px-4 hover:bg-gray-100 cursor-pointer">
+                Log in
+              </li>
+              <li className="py-2 px-4 hover:bg-gray-100 cursor-pointer">
+                Sign up
+              </li>
+            </ul>
+          </div>
+          {/* <BackDrop onClick={toggleOpen} /> */}
+        </>
+      )}
     </>
   );
 };
