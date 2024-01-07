@@ -59,11 +59,12 @@ const PopularProduct = ({ popularItems }) => {
       </div>
       <Slider {...settings} className="gap-2 md:gap-4 lg:gap-8">
         {popularItems.map((item) => (
-          <div key={item.Id} className="justify-center items-center ">
+          <div key={item.Id} className="justify-center items-center">
+            {/* lg:h-[230px] lg:w-[185px] */}
             <img
               alt={item.Name}
               src={item.ImageUrl}
-              className="rounded-lg h-64 object-cover-fit sm:h-25 sm:w-25 lg:h-[230px] lg:w-[185px]"
+              className="rounded-lg h-64 object-cover-fit sm:h-25 sm:w-25 "
               width={400}
               height={300}
             />
