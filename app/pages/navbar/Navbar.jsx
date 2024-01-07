@@ -90,7 +90,7 @@ const Navbar = () => {
               >
                 MENU{" "}
                 <svg
-                  className="w-4 h-4 ml-2"
+                  className="w-4 h-4 mr-4 ml-3"
                   fill="none"
                   stroke="#ff9c1c"
                   viewBox="0 0 24 24"
