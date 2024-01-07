@@ -54,7 +54,7 @@ const Footer = () => {
                   <FaTwitter color="#ff9c1c" />
                 </Link>
                 <Link
-                  href="https:///instagram.com"
+                  href="https://instagram.com"
                   className="bg-gray-300 rounded-full p-3"
                   target="_blank"
                 >
