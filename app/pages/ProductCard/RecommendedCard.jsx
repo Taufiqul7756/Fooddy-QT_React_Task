@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React, { useState, useRef } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -10,37 +11,6 @@ const RecommendedCard = ({ recommendedItems }) => {
   const sliderRef = useRef(null); // Create a ref to the slider component
 
   console.log("RecommendedCard Product", recommendedItems);
-  //   infinite: true,
-  //   speed: 400,
-  //   slidesToShow: 5,
-  //   slidesToScroll: 1,
-  //   responsive: [
-  //     {
-  //       breakpoint: 1024, // Large screens
-  //       settings: {
-  //         slidesToShow: 5,
-  //       },
-  //     },
-  //     {
-  //       breakpoint: 900, // Large screens
-  //       settings: {
-  //         slidesToShow: 4,
-  //       },
-  //     },
-  //     {
-  //       breakpoint: 700, // Large screens
-  //       settings: {
-  //         slidesToShow: 3,
-  //       },
-  //     },
-  //     {
-  //       breakpoint: 500, // Small screens
-  //       settings: {
-  //         slidesToShow: 2,
-  //       },
-  //     },
-  //   ],
-  // };
 
   const settings = {
     infinite: true,
