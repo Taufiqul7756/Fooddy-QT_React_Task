@@ -1,6 +1,7 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Slider from "react-slick";
@@ -12,8 +13,53 @@ import { FaAngleRight } from "react-icons/fa";
 
 const PopularProduct = ({ popularItems }) => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const sliderRef = useRef(null); // Create a ref to the slider component
 
   console.log("Popular Product", popularItems);
+
+  //   infinite: true,
+  //   speed: 400,
+  //   slidesToShow: 5,
+  //   slidesToScroll: 1,
+  //   responsive: [
+  //     {
+  //       breakpoint: 1024, // Large screens
+  //       settings: {
+  //         slidesToShow: 5,
+  //       },
+  //     },
+  //     {
+  //       breakpoint: 900, // Large screens
+  //       settings: {
+  //         slidesToShow: 4,
+  //       },
+  //     },
+  //     {
+  //       breakpoint: 700, // Large screens
+  //       settings: {
+  //         slidesToShow: 3,
+  //       },
+  //     },
+  //     {
+  //       breakpoint: 500, // Small screens
+  //       settings: {
+  //         slidesToShow: 2,
+  //       },
+  //     },
+  //   ],
+  // };
+
+  // const handleAddMoreClick = () => {
+  //   setIsPopupOpen(true);
+  // };
+
+  // const handlePopupClose = () => {
+  //   setIsPopupOpen(false);
+  // };
+
+  // const handleFormSubmit = (data) => {
+  //   console.log(data);
+  //   setIsPopupOpen(false);
 
   const settings = {
     infinite: true,
@@ -57,9 +103,16 @@ const PopularProduct = ({ popularItems }) => {
   };
 
   const handleFormSubmit = (data) => {
-    // Handle form submission logic here
     console.log(data);
-    setIsPopupOpen(false); // Close the popup after submission
+    setIsPopupOpen(false);
+  };
+
+  const nextSlide = () => {
+    sliderRef.current.innerSlider.slickNext();
+  };
+
+  const prevSlide = () => {
+    sliderRef.current.innerSlider.slickPrev();
   };
   return (
     <div>
@@ -68,20 +121,19 @@ const PopularProduct = ({ popularItems }) => {
         <div className="flex justify-center items-center gap-4">
           <h3
             onClick={handleAddMoreClick}
-            className="text-[#ff9c1c] cursor-pointer sm:font-thin md:font-semibold lg:font-bold"
+            className="text-[#ff9c1c] cursor-pointer sm:font-thin md:font-semibold lg:font-semibold"
           >
             AddMore
           </h3>
           <div className="flex justify-center items-center">
-            <FaAngleLeft />
-            <FaAngleRight />
+            <FaAngleLeft onClick={prevSlide} className=" cursor-pointer " />
+            <FaAngleRight onClick={nextSlide} className=" cursor-pointer " />
           </div>
         </div>
       </div>
-      <Slider {...settings} className="gap-2 md:gap-4 lg:gap-8">
+      <Slider {...settings} className="gap-4" ref={sliderRef}>
         {popularItems.map((item) => (
-          <div key={item.Id} className="justify-center items-center">
-            {/* lg:h-[230px] lg:w-[185px] */}
+          <div key={item.Id} className="flex-shrink-0 ">
             <img
               alt={item.Name}
               src={item.ImageUrl}
