@@ -1,13 +1,47 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Form from "@/app/components/Form";
+import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 
 const RecommendedCard = ({ recommendedItems }) => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const sliderRef = useRef(null); // Create a ref to the slider component
 
   console.log("RecommendedCard Product", recommendedItems);
+  //   infinite: true,
+  //   speed: 400,
+  //   slidesToShow: 5,
+  //   slidesToScroll: 1,
+  //   responsive: [
+  //     {
+  //       breakpoint: 1024, // Large screens
+  //       settings: {
+  //         slidesToShow: 5,
+  //       },
+  //     },
+  //     {
+  //       breakpoint: 900, // Large screens
+  //       settings: {
+  //         slidesToShow: 4,
+  //       },
+  //     },
+  //     {
+  //       breakpoint: 700, // Large screens
+  //       settings: {
+  //         slidesToShow: 3,
+  //       },
+  //     },
+  //     {
+  //       breakpoint: 500, // Small screens
+  //       settings: {
+  //         slidesToShow: 2,
+  //       },
+  //     },
+  //   ],
+  // };
+
   const settings = {
     infinite: true,
     speed: 400,
@@ -50,26 +84,40 @@ const RecommendedCard = ({ recommendedItems }) => {
   };
 
   const handleFormSubmit = (data) => {
-    // Handle form submission logic here
     console.log(data);
-    setIsPopupOpen(false); // Close the popup after submission
+    setIsPopupOpen(false);
+  };
+
+  const nextSlide = () => {
+    sliderRef.current.innerSlider.slickNext();
+  };
+
+  const prevSlide = () => {
+    sliderRef.current.innerSlider.slickPrev();
   };
 
   return (
-    <div className="">
+    <div>
       <div className="flex justify-between items-center mb-2">
-        <h3 className="font-bold">Recommended</h3>
-        <h3
-          className="text-[#ff9c1c] font-bold cursor-pointer "
-          onClick={handleAddMoreClick}
-        >
-          AddMore
+        <h3 className="sm:font-thin md:font-semibold lg:font-bold">
+          Recommended
         </h3>
+        <div className="flex justify-center items-center gap-4">
+          <h3
+            onClick={handleAddMoreClick}
+            className="text-[#ff9c1c] cursor-pointer sm:font-thin md:font-semibold lg:font-semibold"
+          >
+            AddMore
+          </h3>
+          <div className="flex justify-center items-center">
+            <FaAngleLeft onClick={prevSlide} className=" cursor-pointer " />
+            <FaAngleRight onClick={nextSlide} className=" cursor-pointer " />
+          </div>
+        </div>
       </div>
-
-      <Slider {...settings}>
+      <Slider {...settings} className="gap-4" ref={sliderRef}>
         {recommendedItems.map((item) => (
-          <div key={item.Id} className="justify-center items-center">
+          <div key={item.Id} className="flex-shrink-0">
             <img
               alt={item.Name}
               src={item.ImageUrl}
