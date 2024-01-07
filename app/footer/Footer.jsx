@@ -18,13 +18,15 @@ const Footer = () => {
     <div className=" bg-[#ff9c1c] mt-40 ">
       <div className="flex md:grid-cols-2 sm:grid-cols-1">
         {/* Left */}
-        <div className="p-16 px-60">
-          <div className="py-5 mb-5 flex relative items-center">
+        <div className="p-16 px-60 mb-4 sm:mb-8 ">
+          <div className="py-5 mb-5 flex flex-col sm:flex-row relative items-center ">
             <SearchBar placeholder="Enter your Email" />
             <button
               type="button"
               onClick={handleSubscribeClick}
-              className=" flex justify-center items-center gap-1 font-sm ml-2 p-2 px-5 bg-[#f15c11] text-white rounded-lg relative right-[150px]"
+              className=" flex justify-center items-center 
+              gap-1 font-sm ml-2 p-2 px-5 bg-[#f15c11] text-white rounded-lg 
+              relative lg:right-[150px] md:right-[150px] sm:right-[150px]"
             >
               Subscribe
               <FaArrowRightLong />
