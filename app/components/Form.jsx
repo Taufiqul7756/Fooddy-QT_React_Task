@@ -72,7 +72,10 @@ const Form = ({ onSubmit }) => {
               >
                 isPopular
               </label>
-              <select {...register("isPopular", { required: true })}>
+              <select
+                className=" bg-gray-200 text-gray-700 border border-black-500 rounded py-3 px-6 mb-3 leading-tight focus:outline-none focus:bg-white"
+                {...register("isPopular", { required: true })}
+              >
                 <option value="True">True</option>
                 <option value="False">False</option>
               </select>
@@ -86,7 +89,10 @@ const Form = ({ onSubmit }) => {
               >
                 isRecommended
               </label>
-              <select {...register("isRecommended", { required: true })}>
+              <select
+                className=" bg-gray-200 text-gray-700 border border-black-500 rounded py-3 px-6 mb-3 leading-tight focus:outline-none focus:bg-white"
+                {...register("isRecommended", { required: true })}
+              >
                 <option value="True">True</option>
                 <option value="False">False</option>
               </select>
@@ -95,7 +101,7 @@ const Form = ({ onSubmit }) => {
         </div>
 
         <input
-          className="bg-[#ff9c1c] rounded-lg cursor-pointer"
+          className="bg-[#ff9c1c] hover:bg-[#eb6750] border py-2 font-bold text-white rounded-lg cursor-pointer"
           type="submit"
         />
       </form>
