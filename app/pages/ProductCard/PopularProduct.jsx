@@ -7,6 +7,8 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Form from "@/app/components/Form";
+import { FaAngleLeft } from "react-icons/fa";
+import { FaAngleRight } from "react-icons/fa";
 
 const PopularProduct = ({ popularItems }) => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -63,12 +65,18 @@ const PopularProduct = ({ popularItems }) => {
     <div>
       <div className="flex justify-between items-center mb-2">
         <h3 className="sm:font-thin md:font-semibold lg:font-bold">Popular</h3>
-        <h3
-          onClick={handleAddMoreClick}
-          className="text-[#ff9c1c] cursor-pointer sm:font-thin md:font-semibold lg:font-bold"
-        >
-          AddMore
-        </h3>
+        <div className="flex justify-center items-center gap-4">
+          <h3
+            onClick={handleAddMoreClick}
+            className="text-[#ff9c1c] cursor-pointer sm:font-thin md:font-semibold lg:font-bold"
+          >
+            AddMore
+          </h3>
+          <div className="flex justify-center items-center">
+            <FaAngleLeft />
+            <FaAngleRight />
+          </div>
+        </div>
       </div>
       <Slider {...settings} className="gap-2 md:gap-4 lg:gap-8">
         {popularItems.map((item) => (
