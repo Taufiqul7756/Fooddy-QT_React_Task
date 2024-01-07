@@ -22,7 +22,7 @@ const Form = ({ onSubmit }) => {
               class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
               for="grid-first-name"
             >
-              First Name
+              Product Name
             </label>
             <input
               type="text"
@@ -42,7 +42,7 @@ const Form = ({ onSubmit }) => {
             <input
               type="number"
               className=" bg-gray-200 text-gray-700 border border-black-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-              placeholder="Product Name"
+              placeholder="Price"
               {...register("Price", {})}
             />
           </div>
@@ -58,7 +58,7 @@ const Form = ({ onSubmit }) => {
             <input
               type="url"
               className=" bg-gray-200 text-gray-700 border border-black-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-              placeholder="Product Name"
+              placeholder="Image URL"
               {...register("imageURL", { required: true })}
             />
           </div>
