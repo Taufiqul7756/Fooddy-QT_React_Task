@@ -5,7 +5,6 @@ import { FaArrowRightLong } from "react-icons/fa6";
 import { FaTwitter } from "react-icons/fa";
 import { FaGoogle } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
-
 import footerImg from "../../Images/footer.png";
 import Image from "next/image";
 import Link from "next/link";
@@ -25,7 +24,7 @@ const Footer = () => {
               type="button"
               onClick={handleSubscribeClick}
               className=" flex justify-center items-center gap-1 font-sm ml-2 p-2 px-5 bg-[#f15c11] text-white rounded-lg 
-              sm:absolute lg:right-20 md:right-0 sm:right-0"
+              sm:absolute lg:right-[180px] md:right-0 sm:right-0"
             >
               Subscribe
               <FaArrowRightLong />

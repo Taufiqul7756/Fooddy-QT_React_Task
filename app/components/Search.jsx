@@ -21,8 +21,8 @@ const SearchBar = ({ placeholder }) => {
         autoComplete="off"
         type="text"
         placeholder={searchTerm ? searchTerm : placeholder}
-        className="pl-8 pr-2 py-3 rounded-xl focus:outline-none focus:border-[0.5px] focus:border-slate-500"
-        style={{ width: "500px" }}
+        className=" pl-8 pr-2 py-3 rounded-xl focus:outline-none focus:border-[0.5px] focus:border-slate-500"
+        style={{ width: "400px" }}
       />
     </div>
   );

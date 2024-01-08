@@ -4,7 +4,7 @@ import ProductCards from "./pages/ProductCard/page";
 
 const Home = () => {
   return (
-    <div>
+    <div className="px-40">
       <Banner />
       <ProductCards />
     </div>

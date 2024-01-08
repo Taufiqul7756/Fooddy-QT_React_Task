@@ -13,15 +13,11 @@ const UserMenu = () => {
   };
   return (
     <>
-      <div className="relative z-30">
+      <div className="relative">
         <div
           onClick={toggleOpen}
           className="    
-        flex
-        flex-row
-        items-center
         cursor-pointer
-        transition
         text-[#ff9c1c]
         "
         >

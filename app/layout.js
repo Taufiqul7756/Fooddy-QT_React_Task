@@ -15,21 +15,15 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <Head>
-        {/* Other head elements can be added here */}
         <meta
           http-equiv="Content-Security-Policy"
           content="upgrade-insecure-requests"
         />
       </Head>
       <body className={`${poppins.className} bg-slate-100`}>
-        <div className="">
-          <Navbar />
-        </div>
-
-        <div className="px-40">{children}</div>
-        <div>
-          <FooterSection />
-        </div>
+        <Navbar />
+        {children}
+        <FooterSection />
       </body>
     </html>
   );

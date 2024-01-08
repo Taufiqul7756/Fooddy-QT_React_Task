@@ -25,10 +25,6 @@ const Navbar = () => {
     <div
       className="
     sticky
-    top-0
-    w-full
-    z-30
-    shadow-sm
     "
     >
       {/* <nav>
@@ -72,7 +68,7 @@ const Navbar = () => {
             Pti.
           </Link>
           <div className="flex gap-2 sm:gap-1 md:gap-1 ">
-            <div className="flex relative">
+            <div className="flex relative ">
               <FaMagnifyingGlass className="absolute top-1/2 transform -translate-y-1/2 left-3 text-gray-500" />
 
               <SearchBar placeholder="Search" />
@@ -128,7 +124,7 @@ const Navbar = () => {
                     Category
                   </Link>
                   <Link
-                    href="/myfavorite"
+                    href="/myfav"
                     className="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
                   >
                     My Favorites
@@ -140,17 +136,23 @@ const Navbar = () => {
                     Profile
                   </Link>
                   <Link
-                    href="/"
+                    href="/login"
                     className="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
                   >
-                    Login / Sign Up
+                    Login
+                  </Link>
+                  <Link
+                    href="/signup"
+                    className="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
+                  >
+                    Sign Up
                   </Link>
                 </ul>
               </div>
             </div>
           </div>
           {/* User icon */}
-          <div className="flex items-center gap-8 md:gap-12">
+          <div className="">
             <UserMenu />
           </div>
         </div>
