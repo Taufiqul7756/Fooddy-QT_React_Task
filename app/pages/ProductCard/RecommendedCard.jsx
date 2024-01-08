@@ -27,19 +27,19 @@ const RecommendedCard = ({ recommendedItems }) => {
       {
         breakpoint: 900, // Large screens
         settings: {
-          slidesToShow: 4,
+          slidesToShow: 3,
         },
       },
       {
         breakpoint: 700, // Large screens
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 2,
         },
       },
       {
         breakpoint: 500, // Small screens
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 1,
         },
       },
     ],
