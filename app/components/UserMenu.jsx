@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import BackDrop from "./BackDrop";
 import Avatar from "./Avatar";
+import Link from "next/link";
 
 const UserMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,15 +28,19 @@ const UserMenu = () => {
       </div>
       {isOpen && (
         <>
-          <div className="absolute top-full right-0 mt-2 w-48 bg-white text-gray-700 rounded shadow">
-            <ul>
-              <li className="py-2 px-4 hover:bg-gray-100 cursor-pointer">
-                Log in
-              </li>
-              <li className="py-2 px-4 hover:bg-gray-100 cursor-pointer">
-                Sign up
-              </li>
-            </ul>
+          <div className="absolute top-full grid right-0 mt-2 w-48 bg-white text-gray-700 rounded shadow">
+            <Link
+              href="/login"
+              className="py-2 px-4 hover:bg-gray-100 cursor-pointer"
+            >
+              Log in
+            </Link>
+            <Link
+              href="/signup"
+              className="py-2 px-4 hover:bg-gray-100 cursor-pointer"
+            >
+              Sign up
+            </Link>
           </div>
           {/* <BackDrop onClick={toggleOpen} /> */}
         </>
