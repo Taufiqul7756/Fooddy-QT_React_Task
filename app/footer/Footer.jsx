@@ -16,29 +16,28 @@ const Footer = () => {
   };
   return (
     <div className=" bg-[#ff9c1c] mt-40 ">
-      <div className="flex md:grid-cols-2 sm:grid-cols-1">
+      <div className="flex flex-col sm:flex-row ">
         {/* Left */}
-        <div className="p-16 px-60 mb-4 sm:mb-8 ">
-          <div className="py-5 mb-5 flex flex-col sm:flex-row relative items-center ">
+        <div className="p-4 sm:p-8 lg:p-16 xl:p-24 mb-4 sm:mb-8 w-full sm:w-1/2">
+          <div className="py-4 sm:py-8 mb-4 sm:mb-8 flex flex-col sm:flex-row items-center relative">
             <SearchBar placeholder="Enter your Email" />
             <button
               type="button"
               onClick={handleSubscribeClick}
-              className=" flex justify-center items-center 
-              gap-1 font-sm ml-2 p-2 px-5 bg-[#f15c11] text-white rounded-lg 
-              relative lg:right-[150px] md:right-[150px] sm:right-[150px]"
+              className=" flex justify-center items-center gap-1 font-sm ml-2 p-2 px-5 bg-[#f15c11] text-white rounded-lg 
+              sm:absolute lg:right-20 md:right-0 sm:right-0"
             >
               Subscribe
               <FaArrowRightLong />
             </button>
           </div>
-          <div className="">
+          <div className="text-center sm:text-left">
             <div>
               <h1 className="font-bold">
                 Pti<span className="text-red-600 font-bold">.</span>{" "}
               </h1>
             </div>
-            <div className="flex lg:gap-40 md:gap-20 sm:gap-10 justify-start items-center">
+            <div className="flex gap-20 items-center justify-center sm:justify-start">
               <h3>Copyright©Tripp.All Right Reserved</h3>
               <div className="flex gap-3">
                 <Link
@@ -68,7 +67,7 @@ const Footer = () => {
         </div>
 
         {/* Right */}
-        <div className="hidden sm:block relative right-[200px]">
+        <div className="hidden sm:block relative sm:right-0 sm:w-1/2">
           <Image src={footerImg} alt="Footer image" width={350} height={250} />
         </div>
       </div>

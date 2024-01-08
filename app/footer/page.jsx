@@ -3,7 +3,7 @@ import Footer from "./Footer";
 
 const FooterSection = () => {
   return (
-    <div>
+    <div className="">
       <Footer />
     </div>
   );
