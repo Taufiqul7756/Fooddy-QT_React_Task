@@ -5,6 +5,7 @@ import RecommendedCard from "./RecommendedCard";
 
 const ProductCards = () => {
   const [menuItems, setMenuItems] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchMenuData = async () => {
@@ -14,8 +15,10 @@ const ProductCards = () => {
         );
         const data = await response.json();
         setMenuItems(data.Items);
+        setLoading(false);
       } catch (error) {
         console.error("Error fetching menu data:", error);
+        setLoading(false);
       }
     };
 
@@ -30,12 +33,18 @@ const ProductCards = () => {
 
   return (
     <div>
-      <div className="py-10">
-        <PopularProduct popularItems={popularItems} />
-      </div>
-      <div>
-        <RecommendedCard recommendedItems={recommendedItems} />
-      </div>
+      {loading ? (
+        <p>Loading...</p>
+      ) : (
+        <>
+          <div className="py-10">
+            <PopularProduct popularItems={popularItems} />
+          </div>
+          <div>
+            <RecommendedCard recommendedItems={recommendedItems} />
+          </div>
+        </>
+      )}
     </div>
   );
 };
