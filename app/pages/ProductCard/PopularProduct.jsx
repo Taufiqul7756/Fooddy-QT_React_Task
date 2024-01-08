@@ -138,7 +138,7 @@ const PopularProduct = ({ popularItems }) => {
               <img
                 alt={item.Name}
                 src={item.ImageUrl}
-                className="rounded-lg h-64 object-cover-fit sm:h-25 sm:w-25"
+                className=" cursor-pointer rounded-lg h-64 object-cover-fit sm:h-25 sm:w-25"
                 width={400}
                 height={300}
               />
