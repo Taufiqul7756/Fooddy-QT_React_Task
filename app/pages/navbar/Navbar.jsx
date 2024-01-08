@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import UserMenu from "../../components/UserMenu";
 import SearchBar from "../../components/Search";
 import { FaMagnifyingGlass } from "react-icons/fa6";
-import Select from "react-dropdown-select";
 
 const options = [
   { value: "/", label: "Home" },
@@ -22,9 +21,6 @@ const Navbar = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
 
-  // const toggleDropdown = () => {
-  //   setIsOpen(!isOpen);
-  // };
   return (
     <div
       className="
@@ -132,7 +128,7 @@ const Navbar = () => {
                     Category
                   </Link>
                   <Link
-                    href="/myfav"
+                    href="/myfavorite"
                     className="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
                   >
                     My Favorites
@@ -144,7 +140,7 @@ const Navbar = () => {
                     Profile
                   </Link>
                   <Link
-                    href="/home"
+                    href="/"
                     className="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2"
                   >
                     Login / Sign Up
