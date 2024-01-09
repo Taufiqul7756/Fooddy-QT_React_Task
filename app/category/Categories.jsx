@@ -11,7 +11,6 @@ const Categories = () => {
           <li>Category 1</li>
           <li>Category 2</li>
           <li>Category 3</li>
-          {/* Add more categories as needed */}
         </ul>
       </div>
     </div>

@@ -5,15 +5,6 @@ import UserMenu from "../../components/UserMenu";
 import SearchBar from "../../components/Search";
 import { FaMagnifyingGlass } from "react-icons/fa6";
 
-const options = [
-  { value: "/", label: "Home" },
-  { value: "/details", label: "Details" },
-  { value: "/category", label: "Category" },
-  { value: "/myfavorite", label: "My Favorites" },
-  { value: "/profile", label: "Profile" },
-  { value: "/login", label: "Login/Sign Up" },
-];
-
 const Navbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
@@ -27,34 +18,6 @@ const Navbar = () => {
     sticky
     "
     >
-      {/* <nav>
-        <ul className="flex gap-4">
-          <li>
-            {" "}
-            <Link href="/">Home</Link>{" "}
-          </li>
-          <li>
-            {" "}
-            <Link href="/details">Details</Link>{" "}
-          </li>
-          <li>
-            {" "}
-            <Link href="/category">Category</Link>{" "}
-          </li>
-          <li>
-            {" "}
-            <Link href="/myfavorite">My Favorites</Link>{" "}
-          </li>
-          <li>
-            {" "}
-            <Link href="/profile">Profile</Link>{" "}
-          </li>
-          <li>
-            {" "}
-            <Link href="">Login/Sign Up</Link>{" "}
-          </li>
-        </ul>
-      </nav> */}
       <div className="py-4 border-b-[1px]">
         {/* Logo */}
         <div
