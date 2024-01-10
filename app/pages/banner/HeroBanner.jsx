@@ -4,7 +4,7 @@ import HeroImage from "../../../Images/hero.png";
 
 const HeroBanner = () => {
   return (
-    <div className="hidden sm:block flex flex-col md:flex-row bg-[#ff9c1c] rounded-2xl my-10">
+    <div className=" flex flex-col md:flex-row bg-[#ff9c1c] rounded-2xl my-10">
       {/* Left (Top on small screens) */}
       <div className="p-2 sm:p-5 md:p-10 lg:p-20 md:w-1/2">
         <h1 className="text-white font-black">Deliver Food To Your</h1>
