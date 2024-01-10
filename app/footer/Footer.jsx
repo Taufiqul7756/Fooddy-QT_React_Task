@@ -23,8 +23,8 @@ const Footer = () => {
             <button
               type="button"
               onClick={handleSubscribeClick}
-              className=" flex justify-center items-center gap-1 font-sm ml-2 p-2 px-5 bg-[#f15c11] text-white rounded-lg 
-              sm:absolute lg:right-[180px] md:right-0 sm:right-0"
+              className=" flex justify-center items-center gap-1 font-sm ml-2 p-2 px-5 bg-[#f15c11] sm:bg-gray text-white rounded-lg 
+              sm:absolute lg:right-[200px] lg:py-1 md:right-0 sm:right-0"
             >
               Subscribe
               <FaArrowRightLong />
@@ -36,9 +36,9 @@ const Footer = () => {
                 Pti<span className="text-red-600 font-bold">.</span>{" "}
               </h1>
             </div>
-            <div className="flex gap-20 items-center justify-center sm:justify-start">
+            <div className="md:flex gap-5 grid-cols-2 md:gap-10 lg:gap-20 items-center justify-center sm:justify-start">
               <h3>Copyright©Tripp.All Right Reserved</h3>
-              <div className="flex gap-3">
+              <div className="flex gap-3 ml-40">
                 <Link
                   href="https://google.com/"
                   target="_blank"
