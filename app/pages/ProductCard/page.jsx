@@ -37,7 +37,7 @@ const ProductCards = () => {
         <p>Loading...</p>
       ) : (
         <>
-          <div className="">
+          <div className="mb-8">
             <PopularProduct popularItems={popularItems} />
           </div>
           <div>
