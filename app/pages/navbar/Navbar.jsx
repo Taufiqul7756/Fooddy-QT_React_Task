@@ -15,8 +15,7 @@ const Navbar = () => {
   return (
     <div
       className="
-    sticky
-    "
+    sticky z-50"
     >
       <div className="py-4 border-b-[1px]">
         {/* Logo */}
@@ -39,7 +38,7 @@ const Navbar = () => {
 
             <div className="relative">
               <button
-                className="text-black bg-white  focus:ring-4focus:outline-none focus:border-[0.5px] focus:border-slate-500 font-medium rounded-lg text-sm px-4 py-3.5 text-center inline-flex items-center"
+                className="text-black  bg-white  focus:ring-4focus:outline-none focus:border-[0.5px] focus:border-slate-500 font-medium rounded-lg text-sm px-4 py-3 text-center inline-flex items-center"
                 type="button"
                 onClick={toggleDropdown}
               >
@@ -64,7 +63,7 @@ const Navbar = () => {
               <div
                 className={`${
                   isDropdownOpen ? "absolute" : "hidden"
-                } bg-white text-base z-50 list-none divide-y divide-gray-100 rounded shadow my-4 right-0 top-full`}
+                } bg-white text-base z-60 list-none divide-y divide-gray-100 rounded shadow my-4 right-0 top-full`}
                 id="dropdown"
               >
                 <ul className="py-1" aria-labelledby="dropdown">

@@ -14,7 +14,7 @@ const UserMenu = () => {
   };
   return (
     <>
-      <div className="relative">
+      <div className="relative z-50">
         <div
           onClick={toggleOpen}
           className="    
@@ -28,7 +28,7 @@ const UserMenu = () => {
       </div>
       {isOpen && (
         <>
-          <div className="absolute top-full grid right-0 mt-2 w-48 bg-white text-gray-700 rounded shadow">
+          <div className="z-60 absolute top-full grid right-0 mt-2 w-48 bg-white text-gray-700 rounded shadow">
             <Link
               href="/login"
               className="py-2 px-4 hover:bg-gray-100 cursor-pointer"
