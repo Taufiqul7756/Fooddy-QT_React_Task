@@ -3,7 +3,10 @@ import Navbar from "./Navbar";
 
 const page = () => {
   return (
-    <div className="sm:px-2 md:px-10 lg:px-40">
+    <div
+      className="px-5 gap-4 md:px-20 lg:px-40 md:gap-8
+     "
+    >
       <Navbar />
     </div>
   );

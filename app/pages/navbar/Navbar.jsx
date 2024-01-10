@@ -115,7 +115,7 @@ const Navbar = () => {
             </div>
           </div>
           {/* User icon */}
-          <div className="">
+          <div className="hidden sm:block">
             <UserMenu />
           </div>
         </div>
