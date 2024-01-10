@@ -11,6 +11,7 @@ const Form = ({ onSubmit }) => {
 
   const submitForm = (data) => {
     onSubmit(data);
+    alert("Form submitted successfully!");
   };
   return (
     <div className=" p-10">
